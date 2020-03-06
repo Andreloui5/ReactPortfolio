@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+// Replace SVG file with your logo
+import { BrowserRouter, Route } from "react-router-dom";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Nav from "./components/Nav";
+import Menu from "./components/Menu";
+import Header from "./StyledComponents/Header";
+import "./App.css";
 
 function App() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {/* Places Header at top of the page */}
+      <Header>
+        {/* Clickable Menu toggle */}
+        <Menu onClick={() => setIsNavOpen(true)} />
+        {/* Expandable Navbar */}
+        <Nav isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+        <h1> CRAIG GANT </h1>
+      </Header>
+      <div className="App">
+        {/* Setting up routes to be used */}
+        <Route exact path={("/", "/projects")} component={Projects} />
+        <Route exact path="/about" component={About} />
+      </div>
+    </BrowserRouter>
   );
 }
 

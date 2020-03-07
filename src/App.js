@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // Replace SVG file with your logo
 import { BrowserRouter, Route } from "react-router-dom";
 import About from "./components/About";
-import Projects from "./components/Projects";
+import Projects from "./components/Projects/Projects";
 import Nav from "./components/Nav";
 import Menu from "./components/Menu";
 import Header from "./StyledComponents/Header";

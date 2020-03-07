@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Card = styled(motion.div)`
   border-radius: 15px;
   padding: 20px;
-  color: white;
+  /* color: white; */
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
+  max-width: 30vw;
   img {
     width: 100%;
   }

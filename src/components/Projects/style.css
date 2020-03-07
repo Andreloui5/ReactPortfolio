@@ -1,0 +1,9 @@
+/* Gallery of projects */
+.projects {
+  padding: 40px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+

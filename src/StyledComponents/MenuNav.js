@@ -9,6 +9,7 @@ const MenuNav = styled(motion.nav)`
   height: 100vh;
   background: var(--onyx);
   padding: 40px;
+  z-index: 100;
   ul {
     list-style: none;
     padding: 0;

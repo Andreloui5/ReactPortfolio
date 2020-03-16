@@ -6,3 +6,6 @@
   --blue: rgba(131, 160, 160, 1);
 }
 
+* {
+  font-family: 'Space Mono', monospace;
+}

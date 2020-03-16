@@ -1,13 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Thumbnail from "../Thumbnail";
-import Chicken from "../assets/images/Chicken.png";
-import GameStart from "../assets/images/GameStart.gif";
+import projectArray from "../assets/projectArray";
 import "./style.css";
 
-const myProjects = [Chicken, GameStart];
-
 function Projects() {
+  // START HERE WHEN YOU COME BACK
+  console.log(projectArray);
   return (
     <div className="projects">
       <motion.div
@@ -15,12 +14,14 @@ function Projects() {
         // on exit, thumbnails should disappear in succession
         variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
       >
-        {/* map through myProjects array (has imgs of projects I've done)- then makes thumbnail of each */}
-        {myProjects.map(item => (
+        {/* map through projectArray (has projects I've done)- then makes thumbnail of each */}
+        {projectArray.map(i => (
           <Thumbnail
-            key={myProjects.indexOf(item)}
-            src={item}
-            alt={`App Preview ${myProjects.indexOf(item) + 1}`}
+            key={i.id}
+            src={i.image}
+            alt={`${i.name} App`}
+            name={i.name}
+            description={i.description}
           />
         ))}
       </motion.div>

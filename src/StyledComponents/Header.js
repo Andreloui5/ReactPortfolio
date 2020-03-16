@@ -13,8 +13,8 @@ const Header = styled.header`
   }
   h1 {
     margin-left: 15px;
-    font-family: "Lato", sans-serif;
-    font-size: 1.1rem;
+    font-family: "Space Mono", monospace;
+    font-size: 1rem;
   }
 `;
 

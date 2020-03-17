@@ -1,0 +1,16 @@
+.about {
+  flex: 1 0 33%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+h1 {
+  position: relative;
+}
+
+img {
+  width: 100%;
+}

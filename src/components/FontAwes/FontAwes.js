@@ -6,7 +6,7 @@ const FontAwes = props => {
   return (
     <Col>
       <a href={props.href} target={props.target}>
-        <i className={props.className} title={props.title}></i>
+        <i className={`${props.className} icon`} title={props.title}></i>
       </a>
     </Col>
   );

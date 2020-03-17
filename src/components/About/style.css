@@ -7,10 +7,7 @@
 
 
 @media screen and (min-width: 1200px) {
-  .fas {
-    margin-top: 50px;
-  }
-  .fab {
+  .icon {
     margin-top: 50px;
   }
 }

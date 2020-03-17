@@ -1,7 +1,8 @@
 import React from "react";
 import { Row, Col, Container, Image } from "react-bootstrap";
 import Portrait from "../assets/images/aiportrait.png";
-// import "./style.css";
+import FontAwes from "../FontAwes/FontAwes";
+import "./style.css";
 
 function About(props) {
   return (
@@ -12,10 +13,10 @@ function About(props) {
         </Col>
       </Row>
       <Row>
-        <Col lg={4} md={6} className="m-1 p-1">
+        <Col md={4} sm={12} align="center">
           <Image src={Portrait} alt="Craig Gant" fluid></Image>
         </Col>
-        <Col lg={7} md={6} className="m-1 p-1">
+        <Col md={8} sm={12} className="about">
           <Row>
             <p>
               Full Stack Web Developer with a certificate in web development
@@ -32,12 +33,24 @@ function About(props) {
               skills to further joint goals and projects.
             </p>
           </Row>
-          <Row>
-            <Col>
-              <a href="mailto:craigkgant@gmail.com">
-                <i className="fa fa-envelope fontAwes" title="Email"></i>
-              </a>
-            </Col>
+          <Row align="center" className="m-2">
+            <FontAwes
+              href="mailto:craigkgant@gmail.com"
+              className="fas fa-envelope"
+              title="Email"
+            />
+            <FontAwes
+              href="https://www.linkedin.com/in/craig-gant-057358190/"
+              target="_blank"
+              className="fab fa-linkedin-in"
+              title="LinkedIn"
+            />
+            <FontAwes
+              href="https://github.com/Andreloui5"
+              target="_blank"
+              className="fab fa-github"
+              title="Github"
+            />
           </Row>
         </Col>
       </Row>

@@ -1,7 +1,7 @@
 import Chicken from "./images/Chicken.png";
 import GameStart from "./images/GameStart.gif";
 import Attend from "./images/Attend.gif";
-import Template from "./images/TemplatingEngine.gif";
+import Template from "./images/TemplateEngine.gif";
 import Workout from "./images/FitnessTracker.gif";
 
 const projectArray = [

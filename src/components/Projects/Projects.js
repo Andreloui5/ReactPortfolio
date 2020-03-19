@@ -1,11 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Thumbnail from "../Thumbnail";
+import Thumbnail from "../Thumbnail/Thumbnail";
 import projectArray from "../assets/projectArray";
 import "./style.css";
 
 function Projects() {
-  // START HERE WHEN YOU COME BACK
   console.log(projectArray);
   return (
     <div className="projects">

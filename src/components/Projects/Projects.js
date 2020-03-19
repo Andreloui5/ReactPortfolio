@@ -2,13 +2,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import Thumbnail from "../Thumbnail/Thumbnail";
 import projectArray from "../assets/projectArray";
-import { Row, Container } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import "./style.css";
 
 function Projects() {
   console.log(projectArray);
   return (
     <Container className="projects">
+      <Row>
+        <Col>
+          <h1 className="text-center p-2 m-2">Projects</h1>
+        </Col>
+      </Row>
       <motion.div
         className="thumbnails"
         // on exit, thumbnails should disappear in succession

@@ -20,7 +20,7 @@ function About(props) {
   };
 
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       <motion.div
         variants={variants}
         initial="initial"

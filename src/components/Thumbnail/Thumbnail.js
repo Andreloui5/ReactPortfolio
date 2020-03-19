@@ -59,7 +59,7 @@ const Thumbnail = props => {
             variants={frameVariants}
             transition={transition}
           >
-            <Link to={`/${props.name}`}>
+            <Link to={`/projects/${props.name}`}>
               <motion.div
                 className="title"
                 variants={h2Variants}

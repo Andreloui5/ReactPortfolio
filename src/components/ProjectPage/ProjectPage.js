@@ -46,9 +46,9 @@ const ProjectPage = props => {
   // console.log(project);
 
   return (
-    <Container fluid>
+    <div>
       <Row>
-        <Col sm={6}>
+        <Col md={6} sm={12}>
           {/* image animate */}
           <motion.div
             className="single"
@@ -63,7 +63,7 @@ const ProjectPage = props => {
             />
           </motion.div>
         </Col>
-        <Col sm={6}>
+        <Col md={6} sm={12} className="projectDesc">
           {/* text animate */}
           <motion.div
             variants={textVariants}
@@ -71,39 +71,42 @@ const ProjectPage = props => {
             animate="enter"
             exit="exit"
           >
-            <Row>
+            <Row className="projectTitle">
               <h1>{project[0].name}</h1>
             </Row>
             <Row>
-              <p>{project[0].description}</p>
+              <p className="descText">{project[0].description}</p>
             </Row>
           </motion.div>
           <Row>
-            {/* button animate */}
-            <motion.div
-              className="back"
-              variants={backVariants}
-              initial="exit"
-              animate="enter"
-              exit="exit"
-            >
-              <FontAwes
-                href={project[0].gitHub}
-                target="_blank"
-                className="fab fa-github gitIcon"
-                title="Github"
-              />
-              <Link to="/projects">
+            <Col xs={{ span: 2 }}>
+              {/* button animate */}
+              <motion.div
+                className="back"
+                variants={backVariants}
+                initial="exit"
+                animate="enter"
+                exit="exit"
+              >
                 <FontAwes
-                  className="far fa-arrow-alt-circle-left"
-                  title="Back"
+                  href={project[0].gitHub}
+                  target="_blank"
+                  className="fab fa-github awesIcon"
+                  title="Github"
                 />
-              </Link>
-            </motion.div>
+
+                <Link to="/projects">
+                  <FontAwes
+                    className="far fa-arrow-alt-circle-left awesIcon"
+                    title="Back"
+                  />
+                </Link>
+              </motion.div>
+            </Col>
           </Row>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 

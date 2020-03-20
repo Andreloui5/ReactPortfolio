@@ -57,23 +57,29 @@ function About(props) {
               </Row>
 
               <Row align="center" className="m-2">
-                <FontAwes
-                  href="mailto:craigkgant@gmail.com"
-                  className="fas fa-envelope"
-                  title="Email"
-                />
-                <FontAwes
-                  href="https://www.linkedin.com/in/craig-gant-057358190/"
-                  target="_blank"
-                  className="fab fa-linkedin-in"
-                  title="LinkedIn"
-                />
-                <FontAwes
-                  href="https://github.com/Andreloui5"
-                  target="_blank"
-                  className="fab fa-github"
-                  title="Github"
-                />
+                <Col>
+                  <FontAwes
+                    href="mailto:craigkgant@gmail.com"
+                    className="fas fa-envelope"
+                    title="Email"
+                  />
+                </Col>
+                <Col>
+                  <FontAwes
+                    href="https://www.linkedin.com/in/craig-gant-057358190/"
+                    target="_blank"
+                    className="fab fa-linkedin-in"
+                    title="LinkedIn"
+                  />
+                </Col>
+                <Col>
+                  <FontAwes
+                    href="https://github.com/Andreloui5"
+                    target="_blank"
+                    className="fab fa-github"
+                    title="Github"
+                  />
+                </Col>
               </Row>
             </Col>
           </Row>

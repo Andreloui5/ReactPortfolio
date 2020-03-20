@@ -1,6 +1,5 @@
 .single {
   overflow: hidden;
-  height: 100vh;
 }
 
 .single img {
@@ -14,8 +13,28 @@
   z-index: 1;
 }
 
-.gitIcon {
+.awesIcon {
   font-size: 50px;
   top: 50px;
   right: 50px;
+  padding-right: 40px
+}
+
+.projectTitle {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.descText{
+padding: 20px 25px 20px 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .projectTitle {
+    margin-top: 40px;
+  }
+  .projectDesc {
+    margin: 0 30px;
+    padding: 20px 40px 20px 20px;
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // Replace SVG file with your logo
 import { BrowserRouter, Route } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+// import { AnimatePresence } from "framer-motion";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";

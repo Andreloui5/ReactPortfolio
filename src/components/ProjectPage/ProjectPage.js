@@ -25,6 +25,15 @@ const backVariants = {
   enter: { x: 0, opacity: 1, transition: { delay: 1, ...transition } }
 };
 
+const textVariants = {
+  exit: { y: "-50%", opacity: 0, transition },
+  enter: {
+    y: "0%",
+    opacity: 1,
+    transition: { delay: 1, ...transition }
+  }
+};
+
 const ProjectPage = props => {
   // set initial state as the param :name.
   const [project, setProject] = useState(props.match.params.name);
@@ -34,12 +43,13 @@ const ProjectPage = props => {
     // set hook to equal this project
     setProject(thisProject);
   }, []);
-  console.log(project);
+  // console.log(project);
 
   return (
     <Container fluid>
       <Row>
         <Col sm={6}>
+          {/* image animate */}
           <motion.div
             className="single"
             initial="exit"
@@ -54,17 +64,35 @@ const ProjectPage = props => {
           </motion.div>
         </Col>
         <Col sm={6}>
+          {/* text animate */}
+          <motion.div
+            variants={textVariants}
+            initial="exit"
+            animate="enter"
+            exit="exit"
+          >
+            <Row>
+              <h1>{project[0].name}</h1>
+            </Row>
+            <Row>
+              <p>{project[0].description}</p>
+            </Row>
+          </motion.div>
           <Row>
-            <p>{project[0].description}</p>
-          </Row>
-          <Row>
-            <FontAwes
-              href={project[0].gitHub}
-              target="_blank"
-              className="fab fa-github gitIcon"
-              title="Github"
-            />
-            <motion.div className="back" variants={backVariants}>
+            {/* button animate */}
+            <motion.div
+              className="back"
+              variants={backVariants}
+              initial="exit"
+              animate="enter"
+              exit="exit"
+            >
+              <FontAwes
+                href={project[0].gitHub}
+                target="_blank"
+                className="fab fa-github gitIcon"
+                title="Github"
+              />
               <Link to="/projects">
                 <FontAwes
                   className="far fa-arrow-alt-circle-left"

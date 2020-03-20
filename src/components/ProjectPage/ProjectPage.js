@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ProjectArray from "../assets/projectArray";
 import FontAwes from "../FontAwes/FontAwes";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "./style.css";
 
 const transition = {
@@ -79,7 +79,7 @@ const ProjectPage = props => {
             </Row>
           </motion.div>
           <Row>
-            <Col xs={{ span: 2 }}>
+            <Col xs={2}>
               {/* button animate */}
               <motion.div
                 className="back"

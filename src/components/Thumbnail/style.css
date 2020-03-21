@@ -5,19 +5,20 @@
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   width: 100%;
   height: 100%;
+  max-width: 400px;
+  max-height: 400px;
   overflow: hidden;
   display: flex;
 }
 
 .title h2 {
+  /* overflow: hidden; */
   margin: auto;
   color: #f1f1f1;
   /* padding-top: 120px; */
   font-size: 35px;
   text-align: center;
 }
-
-
 
 img {
   position: relative;
@@ -36,7 +37,7 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 2.5%;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .frame {

@@ -5,6 +5,9 @@
   float: left;
 }
 
+.aboutIcon {
+  font-size: 22px;
+}
 
 @media screen and (min-width: 1200px) {
   .icon {

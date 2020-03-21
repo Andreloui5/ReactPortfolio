@@ -76,7 +76,7 @@ function About(props) {
                 <Col>
                   <FontAwes
                     href="mailto:craigkgant@gmail.com"
-                    className="fas fa-envelope"
+                    className="fas fa-envelope aboutIcon"
                     title="Email"
                   />
                 </Col>
@@ -84,7 +84,7 @@ function About(props) {
                   <FontAwes
                     href="https://www.linkedin.com/in/craig-gant-057358190/"
                     target="_blank"
-                    className="fab fa-linkedin-in"
+                    className="fab fa-linkedin-in aboutIcon"
                     title="LinkedIn"
                   />
                 </Col>
@@ -92,7 +92,7 @@ function About(props) {
                   <FontAwes
                     href="https://github.com/Andreloui5"
                     target="_blank"
-                    className="fab fa-github"
+                    className="fab fa-github aboutIcon"
                     title="Github"
                   />
                 </Col>

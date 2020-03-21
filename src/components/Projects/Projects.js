@@ -5,22 +5,48 @@ import projectArray from "../assets/projectArray";
 import { Row, Col, Container } from "react-bootstrap";
 import "./style.css";
 
+const transition = {
+  duration: 0.5,
+  ease: [0.43, 0.13, 0.23, 0.96]
+};
+
+const thumbnailVariants = {
+  initial: { scale: 0.9, opacity: 0 },
+  enter: {
+    scale: 1,
+    opacity: 1,
+    transition: { staggerChildren: 0.5 }
+  },
+  exit: {
+    // on exit, scale all images down and fade to opacity 0 using transition, but over a longer time
+    scale: 0.5,
+    opacity: 0,
+    transition: {
+      staggerChildren: 0.5,
+      duration: 1.5,
+      ...transition
+    }
+  }
+};
+
 function Projects() {
-  console.log(projectArray);
   return (
-    <Container className="projects">
+    <div>
       <Row>
         <Col>
           <h1 className="text-center p-2 m-2">Projects</h1>
         </Col>
       </Row>
-      <motion.div
-        className="thumbnails"
-        // on exit, thumbnails should disappear in succession
-        variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
-      >
-        <Row>
-          {/* map through projectArray (has projects I've done)- then makes thumbnail of each */}
+      <div className="projects">
+        {/* map through projectArray (has projects I've done)- then makes thumbnail of each */}
+        <motion.div
+          // on exit, thumbnails should disappear in succession
+          className="thumbnails"
+          variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+        >
           {projectArray.map(i => (
             <Thumbnail
               key={i.id}
@@ -30,9 +56,9 @@ function Projects() {
               description={i.description}
             />
           ))}
-        </Row>
-      </motion.div>
-    </Container>
+        </motion.div>
+      </div>
+    </div>
   );
 }
 

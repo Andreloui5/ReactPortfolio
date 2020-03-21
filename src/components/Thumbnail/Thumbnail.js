@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 import "./style.css";
@@ -44,44 +44,34 @@ const h2Variants = {
 
 const Thumbnail = props => {
   return (
-    <AnimatePresence>
-      <Col sm={6}>
-        <motion.div
-          className="thumbnail"
-          variants={thumbnailVariants}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-          <motion.div
-            className="frame"
+    <motion.div className="thumbnail" variants={thumbnailVariants}>
+      <motion.div
+        className="frame"
+        whileHover="hover"
+        variants={frameVariants}
+        transition={transition}
+      >
+        <Link to={`/projects/${props.name}`}>
+          {/* <motion.div
+            className="title"
+            variants={h2Variants}
             whileHover="hover"
-            variants={frameVariants}
+            whileTap="hover"
             transition={transition}
           >
-            <Link to={`/projects/${props.name}`}>
-              <motion.div
-                className="title"
-                variants={h2Variants}
-                whileHover="hover"
-                whileTap="hover"
-                transition={transition}
-              >
-                <h2>{props.name}</h2>
-              </motion.div>
-              <motion.img
-                whileHover="hover"
-                whileTap="hover"
-                variants={imgVariants}
-                transition={transition}
-                src={props.src}
-                alt={props.alt}
-              />
-            </Link>
-          </motion.div>
-        </motion.div>
-      </Col>
-    </AnimatePresence>
+            <h2>{props.name}</h2>
+          </motion.div> */}
+          <motion.img
+            whileHover="hover"
+            whileTap="hover"
+            variants={imgVariants}
+            transition={transition}
+            src={props.src}
+            alt={props.alt}
+          />
+        </Link>
+      </motion.div>
+    </motion.div>
   );
 };
 

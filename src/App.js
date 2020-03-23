@@ -28,7 +28,8 @@ function App() {
           render={({ location }) => (
             <AnimatePresence exitBeforeEnter initial={false}>
               <Switch location={location} key={location.pathname}>
-                <Route exact path={("/", "/home")} component={Home} />
+                <Route exact path={"/"} component={Home} />
+                <Route exact path={"/home"} component={Home} />
                 <Route exact path={"/projects"} component={Projects} />
                 <Route exact path="/projects/:name" component={ProjectPage} />
                 <Route exact path="/about" component={About} />

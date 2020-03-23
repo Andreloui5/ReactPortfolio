@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-// import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import HomepageSvg from "../HomepageSvg";
 import HomeTitle from "../HomeTitle/HomeTitle";
 
@@ -36,7 +36,18 @@ const Home = () => {
     opacity: 0,
     transition: { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }
   };
+  // provides words to be displayed in h4 element below
   const content = `<- Drag ->`;
+  let history = useHistory();
+  // route to appropriate page when x a certain value
+  function handleDragEnd() {
+    let value = x.get();
+    if (value >= 80) {
+      history.push("/projects");
+    } else if (value <= -80) {
+      history.push("/about");
+    }
+  }
 
   return (
     <motion.div className="example-container" exit={exit}>
@@ -45,6 +56,7 @@ const Home = () => {
         style={{ x }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={e => handleDragEnd()}
       >
         <HomepageSvg
           color={color}

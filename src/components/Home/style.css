@@ -24,3 +24,15 @@
   justify-content: center;
   align-items: center;
 }
+
+#dragMe {
+  padding-right:8px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: calc(50% - 200px / 2);
+  left: calc(50% - 200px / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

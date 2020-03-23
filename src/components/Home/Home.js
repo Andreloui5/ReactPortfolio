@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./style.css";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import HomepageSvg from "../HomepageSvg";
 import HomeTitle from "../HomeTitle/HomeTitle";
 
@@ -18,15 +18,16 @@ const Home = () => {
     "rgb(3, 209, 0)"
   ]);
   // conrtols what image is rendered on drag
-  const computerImg = useTransform(x, [10, 500], [0, 1]);
-  const userImg = useTransform(x, [-10, -500], [0, 1]);
+  const computerImg = useTransform(x, [10, 250], [0, 1]);
+  const userImg = useTransform(x, [-10, -250], [0, 1]);
   // controls the words shown on drag
   const welcomeShow = useTransform(x, [-80, -40, 40, 80], [0, 1, 1, 0]);
+  const initialShow = useTransform(x, [-10, 0, 0, 10], [0, 1, 1, 0]);
   const projectShow = useTransform(x, [30, 80], [0, 1]);
   const aboutShow = useTransform(x, [-30, -80], [0, 1]);
 
   // controls the stroke linecap value (so it doesn't appear immediately upon load)
-  const xRange = [-1000, -100, 100, 1000];
+  const xRange = [-80, -30, 30, 80];
   const userLinecap = useTransform(x, xRange, ["round", "round", "", ""]);
   const compLinecap = useTransform(x, xRange, ["", "", "", "round"]);
 
@@ -35,6 +36,7 @@ const Home = () => {
     opacity: 0,
     transition: { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }
   };
+  const content = `<- Drag ->`;
 
   return (
     <motion.div className="example-container" exit={exit}>
@@ -43,8 +45,6 @@ const Home = () => {
         style={{ x }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
-        // onDragEnd={() => console.log(x.current)}
-        // onDragEnd={handleDragEnd}
       >
         <HomepageSvg
           color={color}
@@ -56,6 +56,9 @@ const Home = () => {
         <HomeTitle show={welcomeShow} text={"Welcome"} />
         <HomeTitle show={projectShow} text={"Projects"} />
         <HomeTitle show={aboutShow} text={"About"} />
+        <motion.h4 id="dragMe" style={{ opacity: initialShow }}>
+          {content}
+        </motion.h4>
       </motion.div>
     </motion.div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Thumbnail from "../Thumbnail/Thumbnail";
 import projectArray from "../assets/projectArray";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "./style.css";
 
 function Projects() {

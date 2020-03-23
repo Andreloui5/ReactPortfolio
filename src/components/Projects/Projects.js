@@ -38,7 +38,7 @@ function Projects() {
           {projectArray.length / 2 === 0 ? (
             <div></div>
           ) : (
-            (console.log("hi"), (<div className="placeholder"></div>))
+            <div className="placeholder"></div>
           )}
         </motion.div>
       </div>

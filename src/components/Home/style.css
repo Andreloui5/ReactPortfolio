@@ -24,24 +24,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.words {
-  color: var;
-  border-radius: 30px;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: calc(50%);
-  left: calc(50%);
-  display: flex;
-  margin-top: 120px;
-  justify-content: center;
-  align-items: center;
-}
-
-#about {
- padding-right: 100px;
-}
-#projects {
- padding-left: 100px;
-}

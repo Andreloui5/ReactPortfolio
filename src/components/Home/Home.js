@@ -5,13 +5,18 @@ import { Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  // variables to control animations
+
+  // sets default val for x at 0
   const x = useMotionValue(0);
-  const xInput = [-100, 0, 100];
+  // controls parameters for color transform
+  const xInput = [-200, 0, 200];
   const color = useTransform(x, xInput, [
     "rgb(211, 9, 225)",
     "rgb(68, 0, 255)",
     "rgb(3, 209, 0)"
   ]);
+  // controls the stroke linecap value (so it doesn't appear immediately upon load)
   const computerImg = useTransform(x, [10, 500], [0, 1]);
   const userImg = useTransform(x, [-10, -500], [0, 1]);
 
@@ -19,6 +24,7 @@ const Home = () => {
   const userLinecap = useTransform(x, xRange, ["round", "round", "", ""]);
   const compLinecap = useTransform(x, xRange, ["", "", "", "round"]);
 
+  // defines exit param for animate presence (from Router)
   const exit = {
     scale: 0.5,
     opacity: 0,
@@ -37,7 +43,7 @@ const Home = () => {
           className="progress-icon"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="210 200 225 225"
+          viewBox="210 180 225 225"
           width="225"
           height="199.47"
           preserveAspectRatio="xMidYMid meet"
@@ -73,14 +79,16 @@ const Home = () => {
             style={{ pathLength: userImg }}
           />
         </svg>
-        {/* <h1 className="text-center">Welcome</h1>
+      </motion.div>
+      <br></br>
+      <motion.div className="words">
         <Link to={"/about"}>
-          <h2 className="text-center">About</h2>
+          <h2 id="about">About</h2>
         </Link>
+        <h1>Welcome</h1>
         <Link to={"/projects"}>
-          <i className="fas fa-laptop-code"></i>
-          <h2 className="text-center">Projects</h2>
-        </Link> */}
+          <h2 id="projects">Projects</h2>
+        </Link>
       </motion.div>
     </motion.div>
   );

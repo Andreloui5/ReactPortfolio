@@ -23,8 +23,8 @@ const Home = () => {
   // controls the words shown on drag
   const welcomeShow = useTransform(x, [-80, -40, 40, 80], [0, 1, 1, 0]);
   const initialShow = useTransform(x, [-10, 0, 0, 10], [0, 1, 1, 0]);
-  const projectShow = useTransform(x, [30, 80], [0, 1]);
-  const aboutShow = useTransform(x, [-30, -80], [0, 1]);
+  const projectShow = useTransform(x, [-1000, 30, 80], [0, 0, 1]);
+  const aboutShow = useTransform(x, [1000, -30, -80], [0, 0, 1]);
 
   // controls the stroke linecap value (so it doesn't appear immediately upon load)
   const xRange = [-80, -30, 30, 80];

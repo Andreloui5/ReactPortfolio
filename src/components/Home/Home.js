@@ -27,10 +27,9 @@ const Home = () => {
   const aboutShow = useTransform(x, [1000, -30, -80], [0, 0, 1]);
 
   // controls the stroke linecap value (so it doesn't appear immediately upon load)
-  const xRange = [-80, -30, 30, 80];
+  const xRange = [-20, -10, 10, 20];
   const userLinecap = useTransform(x, xRange, ["round", "round", "", ""]);
   const compLinecap = useTransform(x, xRange, ["", "", "", "round"]);
-
   // defines exit param for animate presence (from Router)
   const exit = {
     opacity: 0,
@@ -42,6 +41,7 @@ const Home = () => {
   // route to appropriate page when x a certain value
   function handleDragEnd() {
     let value = x.get();
+    console.log(value);
     if (value >= 80) {
       history.push("/projects");
     } else if (value <= -80) {
@@ -64,6 +64,8 @@ const Home = () => {
           userImg={userImg}
           userLinecap={userLinecap}
           compLinecap={compLinecap}
+          show={projectShow}
+          show={aboutShow}
         />
         <HomeTitle show={welcomeShow} text={"Welcome"} />
         <HomeTitle show={projectShow} text={"Projects"} />

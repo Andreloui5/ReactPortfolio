@@ -18,8 +18,8 @@ const Home = () => {
     "rgb(3, 209, 0)"
   ]);
   // conrtols what image is rendered on drag
-  const computerImg = useTransform(x, [10, 250], [0, 1]);
-  const userImg = useTransform(x, [-10, -250], [0, 1]);
+  const computerImg = useTransform(x, [10, 200], [0, 1]);
+  const userImg = useTransform(x, [-10, -200], [0, 1]);
   // controls the words shown on drag
   const welcomeShow = useTransform(x, [-80, -40, 40, 80], [0, 1, 1, 0]);
   const initialShow = useTransform(x, [-10, 0, 0, 10], [0, 1, 1, 0]);

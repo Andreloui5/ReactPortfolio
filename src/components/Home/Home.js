@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useHistory } from "react-router-dom";
-import HomepageSvg from "../HomepageSvg";
+import HomepageSvg from "../HomeSvg/HomepageSvg";
 import HomeTitle from "../HomeTitle/HomeTitle";
 
 const Home = () => {
@@ -61,11 +61,12 @@ const Home = () => {
         <HomepageSvg
           color={color}
           computerImg={computerImg}
-          userImg={userImg}
-          userLinecap={userLinecap}
           compLinecap={compLinecap}
           show={projectShow}
-          show={aboutShow}
+          userImg={userImg}
+          userLinecap={userLinecap}
+          aboutShow={aboutShow}
+          projectShow={projectShow}
         />
         <HomeTitle show={welcomeShow} text={"Welcome"} />
         <HomeTitle show={projectShow} text={"Projects"} />

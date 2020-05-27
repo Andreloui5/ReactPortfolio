@@ -20,7 +20,7 @@ const projectArray = [
     image: CreditCard,
     description:
       "This project was a way for me to incorporate an interactive Three.js element into something practical— a validated credit card form. The form dynamically recognizes a user's credit card type and formats it properly, enforces proper inputs, and provides alerts if a user attempts to submit invalid data. I used react-three-fiber, Three.js, and React in this project.",
-    gitHub:
+    codeSandbox:
       "https://codesandbox.io/s/credit-card-validation-with-threejs-tyumm",
   },
   {

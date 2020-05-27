@@ -8,7 +8,7 @@ import "./style.css";
 
 const transition = {
   duration: 1,
-  ease: [0.43, 0.13, 0.23, 0.96]
+  ease: [0.43, 0.13, 0.23, 0.96],
 };
 
 const imageVariants = {
@@ -16,13 +16,13 @@ const imageVariants = {
   enter: {
     y: "0%",
     opacity: 1,
-    transition
-  }
+    transition,
+  },
 };
 
 const backVariants = {
   exit: { x: 100, opacity: 0, transition },
-  enter: { x: 0, opacity: 1, transition: { delay: 1, ...transition } }
+  enter: { x: 0, opacity: 1, transition: { delay: 1, ...transition } },
 };
 
 const textVariants = {
@@ -30,20 +30,19 @@ const textVariants = {
   enter: {
     y: "0%",
     opacity: 1,
-    transition: { delay: 1, ...transition }
-  }
+    transition: { delay: 1, ...transition },
+  },
 };
 
-const ProjectPage = props => {
+const ProjectPage = (props) => {
   // set initial state as the param :name.
   const [project, setProject] = useState(props.match.params.name);
   // Go through ProjectArray and find this project by its name
   useEffect(() => {
-    const thisProject = ProjectArray.filter(i => i.name === project);
+    const thisProject = ProjectArray.filter((i) => i.name === project);
     // set hook to equal this project
     setProject(thisProject);
   }, []);
-  // console.log(project);
 
   return (
     <div>
@@ -88,12 +87,21 @@ const ProjectPage = props => {
                 animate="enter"
                 exit="exit"
               >
-                <FontAwes
-                  href={project[0].gitHub}
-                  target="_blank"
-                  className="fab fa-github awesIcon"
-                  title="Github"
-                />
+                {project[0].gitHub ? (
+                  <FontAwes
+                    href={project[0].gitHub}
+                    target="_blank"
+                    className="fab fa-github awesIcon"
+                    title="Github"
+                  />
+                ) : (
+                  <FontAwes
+                    href={project[0].codeSandbox}
+                    target="_blank"
+                    className="fab fa-codepen awesIcon"
+                    title="CodeSandbox"
+                  />
+                )}
 
                 <Link to="/projects">
                   <FontAwes

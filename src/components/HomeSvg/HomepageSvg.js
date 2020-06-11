@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const HomepageSvg = props => {
+const HomepageSvg = (props) => {
   return (
     <svg
       className="progress-icon"
@@ -11,6 +11,10 @@ const HomepageSvg = props => {
       width="225"
       height="199.47"
       preserveAspectRatio="xMidYMid meet"
+      style={{
+        transition: "filter .5s ease",
+        filter: `drop-shadow(${props.dropShadow})`,
+      }}
     >
       {/* Circle */}
       <motion.path
@@ -18,7 +22,10 @@ const HomepageSvg = props => {
         strokeWidth="10"
         stroke={props.color}
         d="M413.06 289.49C413.06 344.53 368.25 389.22 313.06 389.22C257.87 389.22 213.06 344.53 213.06 289.49C213.06 234.44 257.87 189.75 313.06 189.75C368.25 189.75 413.06 234.44 413.06 289.49Z"
-        style={{ translateX: 5, translateY: 5 }}
+        style={{
+          translateX: 5,
+          translateY: 5,
+        }}
       />
       {/* Computer */}
       <motion.path

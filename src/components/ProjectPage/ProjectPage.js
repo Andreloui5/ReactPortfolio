@@ -87,6 +87,7 @@ const ProjectPage = (props) => {
                 animate="enter"
                 exit="exit"
               >
+                {/* If the project is on github, render fontawesome link to github, otherwise render fontawesome link to codesandbox */}
                 {project[0].gitHub ? (
                   <FontAwes
                     href={project[0].gitHub}

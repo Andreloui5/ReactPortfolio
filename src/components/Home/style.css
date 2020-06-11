@@ -14,7 +14,7 @@
 
 .box {
   background: white;
-  border-radius: 30px;
+  border-radius: 70px;
   width: 200px;
   height: 200px;
   position: absolute;
@@ -35,4 +35,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.svgShadow{
+  border-radius: 50px;
+  background: #f5fbff;
+  box-shadow:  -23px 23px 25px #878a8c,
+               23px -23px 25px #ffffff;
 }

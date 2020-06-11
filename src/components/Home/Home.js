@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useHistory } from "react-router-dom";
@@ -15,7 +15,7 @@ const Home = () => {
   const color = useTransform(x, xInput, [
     "rgb(211, 9, 225)",
     "rgb(68, 0, 255)",
-    "rgb(3, 209, 0)"
+    "rgb(3, 209, 0)",
   ]);
   // conrtols what image is rendered on drag
   const computerImg = useTransform(x, [10, 200], [0, 1]);
@@ -33,7 +33,7 @@ const Home = () => {
   // defines exit param for animate presence (from Router)
   const exit = {
     opacity: 0,
-    transition: { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }
+    transition: { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] },
   };
   // provides words to be displayed in h4 element below
   const content = `<- Drag ->`;
@@ -41,14 +41,21 @@ const Home = () => {
   // route to appropriate page when x a certain value
   function handleDragEnd() {
     let value = x.get();
-    console.log(value);
     if (value >= 80) {
       history.push("/projects");
     } else if (value <= -80) {
       history.push("/about");
     }
+    setIsHovered(false);
   }
 
+  // Hook to keep state of mouse when hovered over main svg
+  const [isHovered, setIsHovered] = useState(false);
+  let shadow;
+
+  isHovered
+    ? (shadow = "0px 12px 12px rgba(0, 0, 0, 1)")
+    : (shadow = "0px 0px 0px rgba(0, 0, 0, 1)");
   return (
     <motion.div className="example-container" exit={exit}>
       <motion.div
@@ -56,7 +63,12 @@ const Home = () => {
         style={{ x }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
-        onDragEnd={e => handleDragEnd()}
+        onDragEnd={(e) => handleDragEnd()}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setIsHovered(false)}
+        onDrag={(e) => setIsHovered(true)}
+        onMouseEnter={(e) => setIsHovered(true)}
+        onMouseLeave={(e) => setIsHovered(false)}
       >
         <HomepageSvg
           color={color}
@@ -67,6 +79,7 @@ const Home = () => {
           userLinecap={userLinecap}
           aboutShow={aboutShow}
           projectShow={projectShow}
+          dropShadow={shadow}
         />
         <HomeTitle show={welcomeShow} text={"Welcome"} />
         <HomeTitle show={projectShow} text={"Projects"} />

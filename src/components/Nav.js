@@ -47,9 +47,13 @@ export const Nav = ({ isNavOpen, setIsNavOpen }) => {
       animate={isNavOpen ? "open" : "closed"}
       transition={{ damping: 300 }}
     >
-      <CloseButton onClick={() => setIsNavOpen(false)}>
+      <CloseButton
+        onClick={() => setIsNavOpen(false)}
+        aria-label={"close menu"}
+      >
         <i
           role="button"
+          aria-label={"close menu"}
           className="fas fa-times"
           onClick={() => setIsNavOpen(false)}
         ></i>

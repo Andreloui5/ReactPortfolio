@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { motion } from "framer-motion";
 import Thumbnail from "../Thumbnail/Thumbnail";
 import projectArray from "../assets/projectArray";
 import { Row, Col } from "react-bootstrap";
+import Loading from "../Loader/Loading";
 import "./style.css";
 
 function Projects() {
@@ -19,27 +20,29 @@ function Projects() {
           // on exit, thumbnails should disappear in succession
           className="thumbnails"
           variants={{
-            exit: { transition: { staggerChildren: 0.1 } }
+            exit: { transition: { staggerChildren: 0.1 } },
           }}
           initial="initial"
           animate="enter"
           exit="exit"
         >
-          {projectArray.map(i => (
-            <Thumbnail
-              key={i.id}
-              src={i.image}
-              alt={`${i.name} App`}
-              name={i.name}
-              description={i.description}
-            />
-          ))}
-          {/* if projectarray is odd in length, add a placeholder to the end of the list */}
-          {projectArray.length / 2 === 0 ? (
-            <div></div>
-          ) : (
-            <div className="placeholder"></div>
-          )}
+          <Suspense fallback={<Loading />}>
+            {projectArray.map((i) => (
+              <Thumbnail
+                key={i.id}
+                src={i.image}
+                alt={`${i.name} App`}
+                name={i.name}
+                description={i.description}
+              />
+            ))}
+            {/* if projectarray is odd in length, add a placeholder to the end of the list */}
+            {projectArray.length / 2 === 0 ? (
+              <div></div>
+            ) : (
+              <div className="placeholder"></div>
+            )}
+          </Suspense>
         </motion.div>
       </div>
     </div>

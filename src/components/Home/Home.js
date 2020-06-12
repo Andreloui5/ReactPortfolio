@@ -84,7 +84,13 @@ const Home = () => {
         <HomeTitle show={welcomeShow} text={"Welcome"} />
         <HomeTitle show={projectShow} text={"Projects"} />
         <HomeTitle show={aboutShow} text={"About"} />
-        <motion.h4 id="dragMe" style={{ opacity: initialShow }}>
+        <motion.h4
+          id="dragMe"
+          style={{
+            opacity: initialShow,
+            transition: "opacity .5s ease",
+          }}
+        >
           {content}
         </motion.h4>
       </motion.div>

@@ -10,9 +10,9 @@ const variants = {
   closed: {
     x: "-100%",
     transition: {
-      delay: 0.2
-    }
-  }
+      delay: 0.2,
+    },
+  },
 };
 
 const ulVariants = {
@@ -21,20 +21,20 @@ const ulVariants = {
       staggerChildren: 0.3,
       delayChildren: 0.2,
       staggerDirection: 1,
-      when: "afterChildren"
-    }
+      when: "afterChildren",
+    },
   },
   closed: {
-    scale: 1
-  }
+    scale: 1,
+  },
 };
 
 const liVariants = {
   open: {
     y: 0,
-    opacity: 1
+    opacity: 1,
   },
-  closed: { y: -20, opacity: 0 }
+  closed: { y: -20, opacity: 0 },
 };
 
 const links = ["home", "about", "projects"];
@@ -56,7 +56,7 @@ export const Nav = ({ isNavOpen, setIsNavOpen }) => {
       </CloseButton>
       {/* Goes through links array and makes animatable menu */}
       <motion.ul variants={ulVariants}>
-        {links.map(link => (
+        {links.map((link) => (
           <motion.li
             variants={liVariants}
             key={link}

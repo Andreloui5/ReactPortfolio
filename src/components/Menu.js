@@ -1,7 +1,7 @@
 import React from "react";
 
-const Menu = props => (
-  <div {...props} role="button">
+const Menu = (props) => (
+  <div {...props} role="button" aria-label="main menu">
     <svg viewBox="0 0 18 15" width="20">
       <path
         fill="rgba(54, 57, 59, 1)"

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Menu = (props) => (
-  <div {...props} role="button" aria-label={"open menu"}>
+  <div {...props} role="button" aria-label={"open menu"} style={{cursor: "pointer"}}>
     <svg viewBox="0 0 18 15" width="20">
       <path
         fill="rgba(54, 57, 59, 1)"

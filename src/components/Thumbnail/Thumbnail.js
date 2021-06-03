@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import {Col} from "react-bootstrap"
 import "./style.css";
 
 const transition = {
@@ -25,15 +26,12 @@ const thumbnailVariants = {
 
 const frameVariants = {
   hover: {
-    scale: 0.94,
-    borderRadius: "50%",
+    scale: 1.1,
+    // scale: 0.94,
+    borderRadius: "5%",
     boxShadow:
       "0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07)"
   }
-};
-
-const imgVariants = {
-  hover: { scale: 1.1 }
 };
 
 const h2Variants = {
@@ -44,36 +42,37 @@ const h2Variants = {
 
 const Thumbnail = props => {
   return (
-    <motion.div
-      className="thumbnail"
-      variants={thumbnailVariants}
-      whileHover="hover"
-      whileTap="hover"
-    >
+    <Col xs={6}>
       <motion.div
-        className="frame"
-        variants={frameVariants}
-        transition={transition}
+        className="thumbnail"
+        variants={thumbnailVariants}
+        whileHover="hover"
+        whileTap="hover"
       >
-        <Link to={`/projects/${props.name}`}>
-          <motion.div
-            className="title"
-            variants={h2Variants}
-            initial="initial"
-            exit="exit"
-            transition={transition}
-          >
-            <h2>{props.name}</h2>
-          </motion.div>
-          <motion.img
-            variants={imgVariants}
-            transition={transition}
-            src={props.src}
-            alt={props.alt}
-          />
-        </Link>
+        <motion.div
+          className="frame"
+          variants={frameVariants}
+          transition={transition}
+        >
+          <Link to={`/projects/${props.name}`}>
+            <motion.div
+              className="title"
+              variants={h2Variants}
+              initial="initial"
+              exit="exit"
+              transition={transition}
+            >
+              <h2>{props.name}</h2>
+            </motion.div>
+            <motion.img
+              transition={transition}
+              src={props.src}
+              alt={props.alt}
+            />
+          </Link>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </Col>
   );
 };
 

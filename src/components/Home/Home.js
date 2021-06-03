@@ -20,6 +20,7 @@ const Home = () => {
   // conrtols what image is rendered on drag
   const computerImg = useTransform(x, [10, 200], [0, 1]);
   const userImg = useTransform(x, [-10, -200], [0, 1]);
+  
   // controls the words shown on drag
   const welcomeShow = useTransform(x, [-80, -40, 40, 80], [0, 1, 1, 0]);
   const initialShow = useTransform(x, [-10, 0, 0, 10], [0, 1, 1, 0]);
@@ -30,6 +31,7 @@ const Home = () => {
   const xRange = [-20, -10, 10, 20];
   const userLinecap = useTransform(x, xRange, ["round", "round", "", ""]);
   const compLinecap = useTransform(x, xRange, ["", "", "", "round"]);
+
   // defines exit param for animate presence (from Router)
   const exit = {
     opacity: 0,

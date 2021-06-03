@@ -5,10 +5,27 @@ import Template from "./images/TemplateEngine.gif";
 import Workout from "./images/FitnessTracker.gif";
 import CreditCard from "./images/creditCardValidation.gif";
 import Commerce from "./images/Commerce.gif";
+import Commerce2 from "./images/Commerce2.gif"
 
 const projectArray = [
   {
     id: 1,
+    name: "3D Checkout Experience with Three.js",
+    image: Commerce2,
+    description:
+    "This application shows how to incorporate 3D animation into an eCommerce Checkout experience. The interactive 3D image changes to reflect a user's information as it is entered. The ReadMe serves as a guide for other developers who wish to develop similar apps. This project is also featured on Commerce.js' website (https://commerce.js/docs).",
+    gitHub: "https://github.com/Andreloui5/3DCreditCardForm",
+  },
+  {
+    id: 2,
+    name: "eCommerce Cart with Three.js",
+    image: Commerce,
+    description:
+    "This eCommerce application integrates the Chec/Commerce.js API and SDK with React and Three.js. The ReadMe serves as a guide for other developers who wish to develop similar apps. This project is also featured on Commerce.js' website (https://commerce.js/docs).",
+    gitHub:"https://github.com/Andreloui5/CommerceWithThree-part2",
+  },
+  {
+    id: 3,
     name: "Attend",
     image: Attend,
     description:
@@ -16,15 +33,7 @@ const projectArray = [
     gitHub: "https://github.com/Andreloui5/Attendance",
   },
   {
-    id: 2,
-    name: "eCommerce Cart with Three.js",
-    image: Commerce,
-    description:
-      "This eCommerce application integrates the Chec/Commerce.js API and SDK with React and Three.js. The ReadMe serves as a guide for other developers who wish to develop similar apps. This project is also featured on Commerce.js' website (https://commerce.js/resources).",
-    gitHub: "https://github.com/Andreloui5/CommerceWithThree-part2",
-  },
-  {
-    id: 3,
+    id: 4,
     name: "Credit Card Validation",
     image: CreditCard,
     description:
@@ -33,7 +42,7 @@ const projectArray = [
       "https://codesandbox.io/s/credit-card-validation-with-threejs-tyumm",
   },
   {
-    id: 4,
+    id: 5,
     name: "Appetite",
     image: Chicken,
     description:
@@ -41,7 +50,7 @@ const projectArray = [
     gitHub: "https://github.com/cmoraes2013/APPetite-Project",
   },
   {
-    id: 5,
+    id: 6,
     name: "Trivia Game",
     image: GameStart,
     description:
@@ -49,7 +58,7 @@ const projectArray = [
     gitHub: "https://github.com/Andreloui5/Quiz-Game",
   },
   {
-    id: 6,
+    id: 7,
     name: "Template Engine",
     image: Template,
     description:
@@ -57,7 +66,7 @@ const projectArray = [
     gitHub: "https://github.com/Andreloui5/TemplateEngine",
   },
   {
-    id: 7,
+    id: 8,
     name: "Workout App",
     image: Workout,
     description:
